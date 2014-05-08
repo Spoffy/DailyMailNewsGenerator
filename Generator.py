@@ -8,8 +8,7 @@ conn = http.client.HTTPConnection("www.wordgenerator.net")
 conn.connect()
 conn.request("POST", "/application/p.php?id=nouns&type=50&spaceflag=false")
 response = conn.getresponse()
-random_nouns = response.read()
-print(str(random_nouns))
+random_nouns = response.read().decode(encoding="UTF-8").split(",")
 
 conn = http.client.HTTPConnection("www.dailymail.co.uk")
 conn.connect()
@@ -53,4 +52,4 @@ for conjunctive in first_half:
 for conjunctive in [" by ", " is "]:
     for phrase in first_half[conjunctive]:
         for phrase2 in random_nouns:
-            print(phrase + conjunctive + phrase2)
+            print(phrase + conjunctive + "a " + phrase2)
