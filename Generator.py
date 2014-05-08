@@ -2,6 +2,8 @@ __author__ = 'spoffy'
 
 import http.client
 import xml.etree.ElementTree as ET
+from time import sleep
+from random import choice
 from random import randint
 
 conn = http.client.HTTPConnection("www.dailymail.co.uk")
@@ -41,3 +43,40 @@ for conjunctive in first_half:
         choice = second_half[conjunctive]
         for phrase2 in second_half[conjunctive]:
             print(phrase + conjunctive + phrase2)
+
+NAMES = [ "Duchess of Cambridge", "Brad Pitt", "Queen Elizabeth", "Google", "NSA", "Apple" ]
+
+ACTIONS = [ "spotted after", "is accompanied by", "shows off incredible", "to fund" ]
+
+OBJECTS = [ "Britain", "baby", "immigration", "pit bull", "hot body", "Nigeria", "teen mum", "underwear business" ]
+
+PHRASE = [ "Get them out!", "There is deep love there", "My abs look a little different now", "Rule Brittania" ]
+
+state = 0
+
+def phrase_says_person():
+    return choice(PHRASE) + " says " + choice(NAMES)
+
+def make_title():
+    if (randint(0, 4) == 1):
+        return phrase_says_person()
+
+    global state
+    string_list = []
+    for i in range(0, 1 + 2 * randint(1, 3)):
+        if (state == 0):
+            string_list.append(choice(NAMES))
+            state = 1
+        elif (state == 1):
+            string_list.append(choice(ACTIONS))
+            state = 2
+        elif (state == 2):
+            string_list.append(choice(OBJECTS))
+            state = 1
+    return " ".join(string_list)
+
+while (True):
+    print(make_title() + "\n")
+    state = 0
+    time.sleep(1)
+
