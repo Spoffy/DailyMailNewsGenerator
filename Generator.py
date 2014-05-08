@@ -45,18 +45,18 @@ for conjunctive in first_half:
         for phrase2 in second_half[conjunctive]:
             RANDOMS.append(phrase + conjunctive + phrase2)
 
-NAMES = [ "Duchess of Cambridge", "Brad Pitt", "Queen Elizabeth", "Google", "NSA", "Apple", "Obama", "Jennifer Lopez" ]
+NAMES = [ "Duchess of Cambridge", "Brad Pitt", "Queen Elizabeth", "Google", "NSA", "Apple", "Obama", "Jennifer Lopez", "Royals" ]
 
 ACTIONS = [ "spotted after", "is accompanied by", "shows off incredible", "to fund", "feels confident", "dazzles in sparkling dress," ]
 
-OBJECTS = [ "Britain", "baby", "immigration", "pit bull", "hot body", "Nigeria", "teen mum", "underwear business" ]
+OBJECTS = [ "Britain", "baby", "immigration", "pit bull", "hot body", "Nigeria", "teen mum", "underwear business", "royal family", "police officers" ]
 
-PHRASE = [ "Get them out!", "There is deep love there", "My abs look a little different now", "Rule Brittania", "Poor and lazy" ]
+PHRASE = [ "Get them out!", "There is deep love there", "My abs look a little different now", "Rule Brittania", "Poor and lazy", "They are not welcome" ]
 
 state = 0
 
 def phrase_says_person():
-    return choice(PHRASE) + " says " + choice(NAMES)
+    return "\"" + choice(PHRASE) + "\"" + " says " + choice(NAMES)
 
 def make_title():
     if (randint(0, 4) == 1):
@@ -66,7 +66,7 @@ def make_title():
 
     global state
     string_list = []
-    for i in range(0, 1 + 2 * randint(1, 3)):
+    for i in range(0, 1 + 2 * randint(1, 2)):
         if (state == 0):
             string_list.append(choice(NAMES))
             state = 1
