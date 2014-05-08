@@ -45,13 +45,13 @@ for conjunctive in first_half:
         for phrase2 in second_half[conjunctive]:
             RANDOMS.append(phrase + conjunctive + phrase2)
 
-NAMES = [ "Duchess of Cambridge", "Brad Pitt", "Queen Elizabeth", "Google", "NSA", "Apple", "Obama", "Jennifer Lopez", "Royals" ]
+NAMES = [ "Duchess of Cambridge", "Brad Pitt", "Queen Elizabeth", "Google", "NSA", "Apple", "Obama", "Jennifer Lopez", "Royals", "Zac Efron", "Prince George" ]
 
 ACTIONS = [ "spotted after", "is accompanied by", "shows off incredible", "to fund", "feels confident", "dazzles in sparkling dress," ]
 
-OBJECTS = [ "Britain", "baby", "immigration", "pit bull", "hot body", "Nigeria", "teen mum", "underwear business", "royal family", "police officers" ]
+OBJECTS = [ "Britain", "baby", "immigration", "pit bull", "hot body", "Nigeria", "teen mum", "underwear business", "royal family", "police officers", "glorious empire", "nostalgia" ]
 
-PHRASE = [ "Get them out!", "There is deep love there", "My abs look a little different now", "Rule Brittania", "Poor and lazy", "They are not welcome" ]
+PHRASE = [ "Get them out!", "There is deep love there", "My abs look a little different now", "Rule Brittania", "Poor and lazy", "They are not welcome", "Glorious empire!", "Now THATS a water cannon" ]
 
 state = 0
 
